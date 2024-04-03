@@ -1,0 +1,73 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:5000
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=netflix
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+
+  postgres:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=netflix
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#version: '3'
+#
+#services:
+#  web:
+#    build: .
+#    ports:
+#      - "5000:5000"
+#    volumes:
+#      - .:/app
+#    command: python manage.py runserver 0.0.0.0:5000
+#    depends_on:
+#      - db
+#  db:
+#    image: postgres:latest
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    environment:
+#      - POSTGRES_DB=netflix
+#      - POSTGRES_USER=admin
+#      - POSTGRES_PASSWORD=password
+
+
+
+

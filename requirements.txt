@@ -1,0 +1,5 @@
+Django
+djangorestframework
+data
+django-filter
+drf-yasg
